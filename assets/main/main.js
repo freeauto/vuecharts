@@ -1,23 +1,14 @@
-// jQuery to collapse the navbar on scroll
-$(window).scroll(function() {
-    if ($(".navbar").offset().top > 50) {
-        $(".navbar-fixed-top").addClass("top-nav-collapse");
-    } else {
-        $(".navbar-fixed-top").removeClass("top-nav-collapse");
-    }
-});
-
 Vue.component('chart', {
     delimiters: ['[[', ']]'],
     props: ['series', 'user'],
     template: '<div>[[ user.name ]]</div>',
-    data() {
+    data: function() {
         return {
             chart: null
         };
     },
     methods: {
-        renderChart() {
+        renderChart: function() {
             console.warn("RENDERING CHART");
             if (this.chart) {
                 this.destroyChart();
@@ -40,19 +31,15 @@ Vue.component('chart', {
                         color: '#808080'
                     }]
                 },
-                tooltip: {
-                    valueSuffix: '°C'
-                },
                 legend: {
                     layout: 'vertical',
                     align: 'right',
-                    verticalAlign: 'middle',
-                    borderWidth: 0
+                    verticalAlign: 'middle'
                 },
                 series: this.series
             });
         },
-        destroyChart() {
+        destroyChart: function() {
             console.warn("CHART DESTROY")
             if (this.chart) {
                 this.chart.destroy();
@@ -60,13 +47,13 @@ Vue.component('chart', {
             }
         }
     },
-    updated() {
+    updated: function() {
         this.renderChart();
     },
-    mounted() {
+    mounted: function() {
         this.renderChart();
     },
-    beforeDestroy() {
+    beforeDestroy: function() {
         this.destroyChart();
     }
 })
@@ -99,12 +86,12 @@ var app = new Vue({
             {id: 5, name: "Ronald Reagan"}
         ]
     },
-    created() {
+    created: function() {
         this.activeUser = this.users[0];
     },
     methods: {
-        setActive(user) {
-            this.activeUser = user
+        setActive: function(user) {
+            this.activeUser = user;
         }
     }
 });
