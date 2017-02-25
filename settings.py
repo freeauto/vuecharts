@@ -7,7 +7,7 @@ from alembic.config import Config
 LOCALDEV_PORT = 8080
 BACKDOOR_PORT = 2823
 
-NAME = 'MVP'
+NAME = 'VueCharts'
 ROOT_URL_PROD = 'http://vuecharts.baylaunch.com'
 ROOT_URL_DEV = 'http://localhost:%d' % LOCALDEV_PORT
 
