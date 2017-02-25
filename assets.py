@@ -13,7 +13,8 @@ env.register_js('main_js', asset_paths('bower/', settings.IS_LIKE_PROD, [
     ('jquery/dist/jquery.js', 'jquery/dist/jquery.min.js'),
     ('bootstrap/dist/js/bootstrap.js', 'bootstrap/dist/js/bootstrap.min.js'),
     ('jquery.easing/js/jquery.easing.js', 'jquery.easing/js/jquery.easing.min.js'),
-    ('vue/dist/vue.js', 'vue/dist/vue.min.js')
+    ('vue/dist/vue.js', 'vue/dist/vue.min.js'),
+    'highcharts/js/highcharts.js'
 ]) + [
     'main/_pre/**.js',
     'main/main.js',
@@ -25,6 +26,7 @@ env.register_js('main_js', asset_paths('bower/', settings.IS_LIKE_PROD, [
 env.register_css('main_css', asset_paths('bower/', settings.IS_LIKE_PROD, [
     # ('bootstrap/dist/css/bootstrap.css', 'bootstrap/dist/css/bootstrap.min.css'),
     ('font-awesome/css/font-awesome.css', 'font-awesome/css/font-awesome.min.css'),
+    'highcharts/css/highcharts.css',
 ]) + [
     env.add_bundle_less('main_less', settings.IS_REAL_PROD, 'main/main.less', ['main/**.less']),
     'main/_pre/**.css',

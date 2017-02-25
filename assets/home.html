@@ -5,15 +5,13 @@
         <div class="col-lg-8 col-lg-offset-2">
             <h1>Group Performance</h1>
             <div id="app">
-                [[message]]
-                <div>
                     Reps:
                     <ul class="nav nav-pills">
-                      <li v-for="user in users" v-bind:class="{ active: user.id == activeId }">
-                          <a  @click="setActive(user.id)" href="#">[[ user.name ]]</a>
+                      <li v-for="user in users" v-bind:class="{ active: user === activeUser }">
+                          <a  @click="setActive(user)" href="#">[[ user.name ]]</a>
                       </li>
                     </ul>
-                </div>
+                <chart :series="series" :user="activeUser"/>
             </div>
         </div>
     </section>
